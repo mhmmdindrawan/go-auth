@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | BSS Parking</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .welcome-card {
+            background: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .welcome-card h3 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .welcome-card p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: #2575fc;
+            border-color: #2575fc;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d5dc7;
+            border-color: #1d5dc7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-card">
+        <h3>Welcome, {{ .nama_lengkap }}</h3>
+        <p>Terima kasih telah menggunakan BSS Parking! Anda dapat keluar kapan saja menggunakan tombol di bawah ini</p>
+        <a class="btn btn-primary btn-block" href="/logout" role="button">LOGOUT</a>
+    </div>
+</body>
+
+</html>

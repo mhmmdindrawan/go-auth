@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | BSS Parking</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f7f8fa;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .login-container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-container h4 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .login-container p {
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .form-control:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+
+        .invalid-feedback {
+            font-size: 0.85em;
+            color: #d9534f;
+        }
+
+        a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .center-text {
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <form action="/login" method="post">
+            <h4>SIGN IN</h4>
+            <p>Masukkan username dan password Anda untuk melanjutkan</p>
+            <hr />
+
+            {{ if .error }}
+            <div class="alert alert-danger text-center">
+                {{ .error }}
+            </div>
+            {{ end }}
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username"
+                    class="form-control {{ if .validation.Username }} is-invalid {{ end }}" autocomplete="off" />
+                <div class="invalid-feedback">
+                    {{ .validation.Username }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                    class="form-control {{ if .validation.Password }} is-invalid {{ end }}" autocomplete="off" />
+                <div class="invalid-feedback">
+                    {{ .validation.Password }}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">SIGN IN</button>
+            <hr />
+            <div class="center-text">
+                <p>Belum punya akun? <a href="/register">Mendaftar</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
